@@ -20,6 +20,7 @@
 		BE95BEC72190D9BD005C9AB1 /* ConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE95BEC62190D9BD005C9AB1 /* ConfigurationModel.swift */; };
 		BE95BEC92190D9D2005C9AB1 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE95BEC82190D9D2005C9AB1 /* APIConfiguration.swift */; };
 		BE95BECB2190DA26005C9AB1 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE95BECA2190DA26005C9AB1 /* DataModel.swift */; };
+		BE95BECD2190E32D005C9AB1 /* NowPlayingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE95BECC2190E32D005C9AB1 /* NowPlayingModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		BE95BEC62190D9BD005C9AB1 /* ConfigurationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationModel.swift; sourceTree = "<group>"; };
 		BE95BEC82190D9D2005C9AB1 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		BE95BECA2190DA26005C9AB1 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		BE95BECC2190E32D005C9AB1 /* NowPlayingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			children = (
 				BE95BEC62190D9BD005C9AB1 /* ConfigurationModel.swift */,
 				BE95BECA2190DA26005C9AB1 /* DataModel.swift */,
+				BE95BECC2190E32D005C9AB1 /* NowPlayingModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				BE95BEC32190D52F005C9AB1 /* APIMovie.swift in Sources */,
 				BE95BEC92190D9D2005C9AB1 /* APIConfiguration.swift in Sources */,
 				BE95BEBF2190D3B6005C9AB1 /* API.swift in Sources */,
+				BE95BECD2190E32D005C9AB1 /* NowPlayingModel.swift in Sources */,
 				BE95BEC72190D9BD005C9AB1 /* ConfigurationModel.swift in Sources */,
 				BE95BEC52190D539005C9AB1 /* APICollection.swift in Sources */,
 				BE95BE9B2190D261005C9AB1 /* AppDelegate.swift in Sources */,

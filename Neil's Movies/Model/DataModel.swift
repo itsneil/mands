@@ -10,7 +10,5 @@ import Foundation
 
 class DataModel {
     static let db:DataModel = DataModel()
-    
     var configuration: ConfigurationModel?
-    
 }

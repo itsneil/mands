@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // get image configuration
         APIConfiguration.shared.getConfiguration()
-        
         return true
     }
 }

@@ -9,5 +9,25 @@
 import Foundation
 
 class APINowPlaying : API {
+   
+    static let shared = APINowPlaying()
     
+    let nowPlayingEndpoint = "movie/now_playing"
+    
+    func getNowPlaying(completion: @escaping (NowPlayingModel?) -> Void) {
+        let urlString = apiBase+nowPlayingEndpoint+"?api_key="+apiKey
+        
+        get(from: urlString) { (response) in
+            if let data = response.data {
+                do {
+                    let model = try JSONDecoder().decode(NowPlayingModel.self, from: data)
+                        completion(model)
+                    return
+                } catch _ {
+                    completion(nil)
+                }
+            }
+            completion(nil)
+        }
+    }
 }
