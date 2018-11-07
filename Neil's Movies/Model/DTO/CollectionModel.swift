@@ -29,19 +29,11 @@ struct CollectionModel: Codable {
 
 struct CollectionPartModel: Codable {
     
-    var backdropPath: String
     var identifier: Int
-    var overview: String
-    var posterPath: String
-    var releaseDate: String
     var title: String
     
     enum CodingKeys: String, CodingKey {
-        case backdropPath = "backdrop_path"
         case identifier = "id"
-        case overview
-        case posterPath = "poster_path"
-        case releaseDate = "release_date"
         case title
     }
 }

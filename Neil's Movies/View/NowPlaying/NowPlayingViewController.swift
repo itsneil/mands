@@ -51,7 +51,6 @@ extension NowPlayingViewController: NowPlayingViewModelDelegate {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
 }
 
 

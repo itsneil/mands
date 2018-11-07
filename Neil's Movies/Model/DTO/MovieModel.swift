@@ -14,8 +14,6 @@ struct MovieModel: Codable {
     var identifier: Int
     var overview: String
     var backdropPath: String
-    var releaseDate: String
-    var runtime: Int
     var tagline: String
     var title: String
     
@@ -24,8 +22,6 @@ struct MovieModel: Codable {
         case identifier = "id"
         case overview
         case backdropPath = "backdrop_path"
-        case releaseDate = "release_date"
-        case runtime
         case tagline
         case title
     }

@@ -25,7 +25,6 @@ class MovieViewController: UIViewController {
         tableView.dataSource = viewModel
         tableView.rowHeight = UITableView.automaticDimension
     }
-    
 }
 
 extension MovieViewController: MovieViewModelDelegate {
