@@ -9,22 +9,56 @@
 import UIKit
 
 class MovieViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    static let identifier = "MovieViewController_Identifier"
+    var movieId: Int!
+    var viewModel: MovieViewModel = MovieViewModel()
+    fileprivate var loadingView: UIView?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = "Movie Details"
+        viewModel.startWith(movieId: movieId, withDelegate: self)
+        tableView.delegate = viewModel
+        tableView.dataSource = viewModel
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension MovieViewController: MovieViewModelDelegate {
+    
+    func isLoading(loading: Bool) {
+        if loading {
+            if loadingView == nil {
+                loadingView = displaySpinner()
+            }
+        } else {
+            if let loadingView = loadingView {
+                removeSpinner(spinner: loadingView)
+                self.loadingView = nil
+            }
+        }
     }
-    */
-
+    
+    func updateData() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    func showBackgroundImage(image: UIImage) {
+        DispatchQueue.main.async {
+            self.imageView.image = image
+        }
+    }
+    
+    func showMovie(withId identifier: Int) {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: MovieViewController.identifier) as? MovieViewController {
+            vc.movieId = identifier
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }

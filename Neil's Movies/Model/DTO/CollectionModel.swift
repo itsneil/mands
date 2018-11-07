@@ -15,6 +15,7 @@ struct CollectionModel: Codable {
     var overview: String
     var posterPath: String
     var backdropPath: String
+    var parts: [CollectionPartModel]
     
     enum CodingKeys: String, CodingKey {
         case identifier = "id"
@@ -22,11 +23,11 @@ struct CollectionModel: Codable {
         case overview
         case posterPath = "poster_path"
         case backdropPath = "backdrop_path"
-        
+        case parts
     }
 }
 
-struct PartModel: Codable {
+struct CollectionPartModel: Codable {
     
     var backdropPath: String
     var identifier: Int

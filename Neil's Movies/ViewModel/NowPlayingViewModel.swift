@@ -11,6 +11,7 @@ import UIKit
 protocol NowPlayingViewModelDelegate: class {
     func isLoading(loading: Bool)
     func updateData()
+    func showMovie(withId identifier: Int)
 }
 
 class NowPlayingViewModel: NSObject {
@@ -40,6 +41,12 @@ extension NowPlayingViewModel: UICollectionViewDelegate, UICollectionViewDataSou
         }
         
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let nowPlaying = DataModel.db.nowPlaying {
+            self.delegate?.showMovie(withId: nowPlaying.nowPlayingMovies[indexPath.row].identifier)
+        }
     }
     
 }

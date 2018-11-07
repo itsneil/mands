@@ -10,4 +10,24 @@ import Foundation
 
 class APICollection : API {
     
+    static let shared = APICollection()
+    
+    let collectionEndpoint = "collection/"
+    
+    func getCollection(withId identifier:Int, completion: @escaping (CollectionModel?) -> Void) {
+        let urlString = apiBase+collectionEndpoint+String(describing: identifier)+"?api_key="+apiKey
+        
+        get(from: urlString) { (response) in
+            if let data = response.data {
+                do {
+                    let model = try JSONDecoder().decode(CollectionModel.self, from: data)
+                    completion(model)
+                    return
+                } catch _ {
+                    completion(nil)
+                }
+            }
+            completion(nil)
+        }
+    }
 }

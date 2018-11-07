@@ -10,10 +10,10 @@ import Foundation
 
 struct MovieModel: Codable {
     
-    var belongsToCollection: BelongsToCollectionModel
+    var belongsToCollection: BelongsToCollectionModel?
     var identifier: Int
     var overview: String
-    var posterPath: String
+    var backdropPath: String
     var releaseDate: String
     var runtime: Int
     var tagline: String
@@ -23,7 +23,7 @@ struct MovieModel: Codable {
         case belongsToCollection = "belongs_to_collection"
         case identifier = "id"
         case overview
-        case posterPath = "poster_path"
+        case backdropPath = "backdrop_path"
         case releaseDate = "release_date"
         case runtime
         case tagline

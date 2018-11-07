@@ -22,7 +22,6 @@ struct NowPlayingMovieModel: Codable {
     var identifier: Int
     var title: String
     var posterPath: String
-    var backdropPath: String?
     var overview: String
     var releaseDate: String
     
@@ -30,7 +29,6 @@ struct NowPlayingMovieModel: Codable {
         case identifier = "id"
         case title
         case posterPath = "poster_path"
-        case backdropPath = "backdrop_path"
         case overview
         case releaseDate = "release_date"
     }

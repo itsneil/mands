@@ -17,6 +17,7 @@ class NowPlayingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.title = "Now Playing"
         viewModel.startWith(delegate: self)
         collectionView.delegate = viewModel
         collectionView.dataSource = viewModel
@@ -41,6 +42,13 @@ extension NowPlayingViewController: NowPlayingViewModelDelegate {
     func updateData() {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
+        }
+    }
+    
+    func showMovie(withId identifier: Int) {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: MovieViewController.identifier) as? MovieViewController {
+            vc.movieId = identifier
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

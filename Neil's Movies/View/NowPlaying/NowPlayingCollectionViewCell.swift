@@ -18,17 +18,16 @@ class NowPlayingCollectionViewCell: UICollectionViewCell {
     func setCell(withModel model: NowPlayingMovieModel) {
         self.titleLabel.text = model.title
         
-        weak var weakImageView = self.backgroundImageView
         DataModel.db.getImage(fromPath: model.posterPath) { (image) in
             DispatchQueue.main.async {
-                weakImageView?.image = image
+                self.backgroundImageView.image = image
             }
         }
     }
     
     override func prepareForReuse() {
         self.titleLabel.text = ""
-        self.backgroundImageView = nil
+        self.backgroundImageView.image = nil
     }
     
     
