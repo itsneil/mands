@@ -19,34 +19,18 @@ class NowPlayingModel: Codable {
 
 struct NowPlayingMovieModel: Codable {
     
-    var voteCount: Int
-    var movieId: Int
-    var video: Bool
-    var voteAverage: Float
+    var identifier: Int
     var title: String
-    var popularity: Float
     var posterPath: String
-    var originalLanguage: String
-    var originalTitle: String
-    var genreIds:[Int]
     var backdropPath: String?
-    var adult: Bool
     var overview: String
     var releaseDate: String
     
     enum CodingKeys: String, CodingKey {
-        case voteCount = "vote_count"
-        case movieId = "id"
-        case video
-        case voteAverage = "vote_average"
+        case identifier = "id"
         case title
-        case popularity
         case posterPath = "poster_path"
-        case originalLanguage = "original_language"
-        case originalTitle = "original_title"
-        case genreIds = "genre_ids"
         case backdropPath = "backdrop_path"
-        case adult
         case overview
         case releaseDate = "release_date"
     }

@@ -10,11 +10,9 @@ import Foundation
 
 struct ConfigurationModel: Codable {
     var images: ImagesConfiguration
-    var changeKeys: [String]
     
     enum CodingKeys: String, CodingKey {
         case images = "images"
-        case changeKeys = "change_keys"
     }
 }
 
